@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "dailyphoto.theskinnyonbenny",
     platforms: [
-       .macOS(.v10_15)
+       .macOS(.v12)
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
@@ -15,7 +15,8 @@ let package = Package(
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "Leaf", package: "leaf")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of

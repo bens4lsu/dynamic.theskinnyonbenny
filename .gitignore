@@ -6,4 +6,6 @@ DerivedData/
 .DS_Store
 db.sqlite
 .swiftpm
-
+Public/content/*
+Resources/Config.json
+Package.resolved
