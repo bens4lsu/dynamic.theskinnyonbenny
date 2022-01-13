@@ -8,6 +8,7 @@ public func configure(_ app: Application) throws {
 
     let appConfig = AppConfig()
     app.http.server.configuration.port = appConfig.listenOnPort
+    app.views.use(.leaf)
     // register routes
     try routes(app)
 }
