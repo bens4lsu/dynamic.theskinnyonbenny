@@ -9,11 +9,12 @@ import Foundation
 import Vapor
 import Leaf
 
-struct Entry: Content {
+struct Entry: Content, Codable {
     
     var entryText: String
     var entryImgPath: String
     var isValid: Bool
+    var date: Date?
     
     init (year: String, month: String, day: String) {
         guard let textFileName = PublicFileManager.fileNameFor(year: year, month: month, day: day, type: .text),
@@ -27,9 +28,33 @@ struct Entry: Content {
         self.entryText = PublicFileManager.textFileContents(textFileName)
         self.entryImgPath = imgPath
         self.isValid = true
+        self.date = String(textFileName.prefix(8)).toDate()
     }
+    
+//    var context: EntryContext {
+//        
+//    }
 }
 
+struct EntryContext: Content, Codable {
+    var entryText: String
+    var entryImgPath: String
+    var entryDate: Date
+    var folderIndexes: [String]
+    var imageIndexValues: [String: ImageIndex]
+}
 
+/*
+ 
+ leaf can handle this:
+ 
+ #if(contains(planets, "Earth")):
+     Earth is here!
+ #else:
+     Earth is not in this array.
+ #endif
+ 
+ DICTIONARY IS OK
+ */
 
 

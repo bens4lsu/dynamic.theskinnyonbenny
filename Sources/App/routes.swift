@@ -11,8 +11,7 @@ func routes(_ app: Application) throws {
         let month = req.parameters.get("month")!
         let day = req.parameters.get("day")!
         let entry = Entry(year: year, month: month, day: day)
-        let bigIndex = try PublicFileManager.folderIndexes()
-        print(bigIndex)
+        //let imageIndexes = PublicFileManager.
         return try await req.view.render("index", entry)
     }
 }

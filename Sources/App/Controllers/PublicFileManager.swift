@@ -16,9 +16,18 @@ final class PublicFileManager {
     
     static let path = DirectoryConfiguration.detect().publicDirectory + "/content/"
     static let fileManager = FileManager.default
+        
     static var url: URL {
         URL(fileURLWithPath: path)
     }
+    
+    static var currentYear: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter.string(from: Date())
+    }
+    
+    static var bigIndex = [String: [ImageIndex]]()
     
 
     static func textFileContents (_ fileName: String) -> String {
@@ -47,21 +56,40 @@ final class PublicFileManager {
         return year_ + "/" + year_ + month_ + day_ + type.rawValue
     }
     
-    static func folderIndexes() throws -> [FolderIndex] {
-        var dirList = [FolderIndex]()
+    static func imageIndexes(foryear year: String) throws -> [ImageIndex] {
+        if year == currentYear {    // no cached indexes for current year
+            return try imageIndexes(year)
+        }
+        if bigIndex.isEmpty {
+            bigIndex = try folderIndexes()
+        }
+        return bigIndex[year] ?? []
+    }
+    
+    static func yearIndexes() throws -> [String] {
+        if bigIndex.isEmpty {
+            bigIndex = try folderIndexes()
+        }
+        return bigIndex.map { $0.key }
+    }
+    
+    
+    
+    private static func folderIndexes() throws -> [String: [ImageIndex]] {
+        var dirList = [String: [ImageIndex]]()
         let dirCandidates = try fileManager.contentsOfDirectory(atPath: path)
         for dirC in dirCandidates {
             let u = url.appendingPathComponent(dirC)
             let v = try u.resourceValues(forKeys: [.isDirectoryKey])
             if v.isDirectory! {
-                let imageIndexes = try addImageIndexes(dirC)
-                dirList.append(FolderIndex(year: dirC, mmdd: imageIndexes))
+                dirList[dirC] = try imageIndexes(dirC)
             }
         }
         return dirList
     }
-    
-    private static func addImageIndexes(_ subfolder: String) throws -> [ImageIndex] {
+  
+
+    private static func imageIndexes(_ subfolder: String) throws -> [ImageIndex] {
         var imageList = [ImageIndex]()
         let subfolderPath = path + subfolder
         let imageCandidates = try fileManager.contentsOfDirectory(atPath: subfolderPath)
@@ -76,4 +104,5 @@ final class PublicFileManager {
         }
         return imageList
     }
+    
 }
