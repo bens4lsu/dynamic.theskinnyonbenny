@@ -28,7 +28,14 @@ final class PublicFileManager {
     }
     
     static var bigIndex = [String: [ImageIndex]]()
-    
+    static var lazyIndex: [String: [ImageIndex]] {
+        get throws {
+            if bigIndex.isEmpty {
+                bigIndex = try folderIndexes()
+            }
+            return bigIndex
+        }
+    }
 
     static func textFileContents (_ fileName: String) -> String {
         let url = url.appendingPathComponent(fileName)
@@ -56,24 +63,24 @@ final class PublicFileManager {
         return year_ + "/" + year_ + month_ + day_ + type.rawValue
     }
     
-    static func imageIndexes(foryear year: String) throws -> [ImageIndex] {
+    static func imageIndexes(forYear year: String) throws -> [ImageIndex] {
         if year == currentYear {    // no cached indexes for current year
             return try imageIndexes(year)
         }
-        if bigIndex.isEmpty {
-            bigIndex = try folderIndexes()
-        }
-        return bigIndex[year] ?? []
+        return try lazyIndex[year] ?? []
     }
     
-    static func yearIndexes() throws -> [String] {
-        if bigIndex.isEmpty {
-            bigIndex = try folderIndexes()
-        }
-        return bigIndex.map { $0.key }
+    static func yearIndexes(forYear year: String) throws -> [String] {
+        try lazyIndex.map { $0.key }.filter{ $0 != year }
     }
     
+    static func firstImageDay(forYear year: String) throws -> ImageIndex {
+        try lazyIndex[year]?.first ?? ImageIndex(yyyy: "0000", mm: "00", dd: "00")
+    }
     
+    static func latestYear() throws -> String? {
+        try Array(lazyIndex.keys).sorted().last
+    }
     
     private static func folderIndexes() throws -> [String: [ImageIndex]] {
         var dirList = [String: [ImageIndex]]()
@@ -88,7 +95,6 @@ final class PublicFileManager {
         return dirList
     }
   
-
     private static func imageIndexes(_ subfolder: String) throws -> [ImageIndex] {
         var imageList = [ImageIndex]()
         let subfolderPath = path + subfolder
@@ -102,7 +108,7 @@ final class PublicFileManager {
                 imageList.append(imgIndex)
             }
         }
-        return imageList
+        return imageList.sorted()
     }
     
 }
