@@ -14,7 +14,8 @@ final class PublicFileManager {
         case image = ".jpg"
     }
     
-    static let path = DirectoryConfiguration.detect().publicDirectory + "/content/"
+    
+    static let path = DirectoryConfiguration.detect().publicDirectory + "/" + AppConfig().publicSubfolder + "/"
     static let fileManager = FileManager.default
         
     static var url: URL {
@@ -35,6 +36,15 @@ final class PublicFileManager {
             }
             return bigIndex
         }
+    }
+    
+    static var rootUrl: String?
+    static var lazyRootUrl: String {
+        if let url = rootUrl {
+            return url
+        }
+        rootUrl = AppConfig().rootUrl
+        return rootUrl!
     }
 
     static func textFileContents (_ fileName: String) -> String {
@@ -70,8 +80,8 @@ final class PublicFileManager {
         return try lazyIndex[year] ?? []
     }
     
-    static func yearIndexes(forYear year: String) throws -> [String] {
-        try lazyIndex.map { $0.key }.filter{ $0 != year }
+    static func yearIndexes(forYear year: String) throws -> [FolderContext] {
+        try lazyIndex.map { FolderContext($0.key) }.filter{ $0.index != year }
     }
     
     static func firstImageDay(forYear year: String) throws -> ImageIndex {

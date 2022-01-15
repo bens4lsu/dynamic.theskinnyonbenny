@@ -16,7 +16,7 @@ struct ImageIndex: Codable, Comparable {
     
     var context: ImageIndexContext {
         let index = mm + dd
-        let link = "/" + yyyy + "/" + mm + "/" + dd
+        let link = AppConfig().imageUrlStart + yyyy + "/" + mm + "/" + dd
         return ImageIndexContext(index: index, link: link)
     }
     
@@ -32,13 +32,17 @@ struct ImageIndex: Codable, Comparable {
 }
 
 struct ImageIndexContext: Content, Codable {
-    // dict [mmdd: link]
     var index: String
     var link: String
 }
 
-struct LocalContext: Content, Codable {
-    var entry: Entry
-    var years: [String]
-    var dayLinks: [ImageIndexContext]
+struct FolderContext: Content, Codable {
+    var index: String
+    var link: String
+    
+    init(_ index: String) {
+        self.index = index
+        self.link = AppConfig().imageUrlStart + index
+    }
 }
+

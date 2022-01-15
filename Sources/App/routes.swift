@@ -32,6 +32,14 @@ func getView(_ req: Request, year: String, month: String, day: String) async thr
     let years = try PublicFileManager.yearIndexes(forYear: year)
     let dayLinks = try PublicFileManager.imageIndexes(forYear: year).map { $0.context }
     let lc = LocalContext(entry: entry, years: years, dayLinks: dayLinks)
+    print(lc)
     return try await req.view.render("index", lc)
 }
+
+fileprivate struct LocalContext: Content, Codable {
+    var entry: Entry
+    var years: [FolderContext]
+    var dayLinks: [ImageIndexContext]
+}
+
 

@@ -24,7 +24,9 @@ struct Entry: Content, Codable {
             return
         }
         self.entryText = PublicFileManager.textFileContents(textFileName)
-        self.entryImgPath = imgPath
+        let ac = AppConfig()
+        let fullPath = ac.imageUrlStart + imgPath
+        self.entryImgPath = fullPath
         self.isValid = true
         self.date = String(textFileName.prefix(8)).toDate()
     }
