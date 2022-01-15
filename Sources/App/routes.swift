@@ -28,7 +28,7 @@ func routes(_ app: Application) throws {
 }
 
 func getView(_ req: Request, year: String, month: String, day: String) async throws -> View {
-    let entry = Entry(year: year, month: month, day: day)
+    let entry = try Entry(year: year, month: month, day: day)
     let years = try PublicFileManager.yearIndexes(forYear: year)
     let dayLinks = try PublicFileManager.imageIndexes(forYear: year).map { $0.context }
     let lc = LocalContext(entry: entry, years: years, dayLinks: dayLinks)

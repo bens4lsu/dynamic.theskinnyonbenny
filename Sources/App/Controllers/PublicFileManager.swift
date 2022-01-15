@@ -14,8 +14,8 @@ final class PublicFileManager {
         case image = ".jpg"
     }
     
-    
-    static let path = DirectoryConfiguration.detect().publicDirectory + "/" + AppConfig().publicSubfolder + "/"
+    static let ac = AppConfig()
+    static let path = DirectoryConfiguration.detect().publicDirectory + "/" + ac.publicSubfolder + "/"
     static let fileManager = FileManager.default
         
     static var url: URL {
@@ -43,7 +43,7 @@ final class PublicFileManager {
         if let url = rootUrl {
             return url
         }
-        rootUrl = AppConfig().rootUrl
+        rootUrl = ac.rootUrl
         return rootUrl!
     }
 
@@ -90,6 +90,16 @@ final class PublicFileManager {
     
     static func latestYear() throws -> String? {
         try Array(lazyIndex.keys).sorted().last
+    }
+    
+    static func imageBefore(_ current: ImageIndex) throws -> ImageIndex? {
+        let allBefore = try lazyIndex[current.yyyy]?.filter { $0 < current }
+        return allBefore?.last
+    }
+    
+    static func imageAfter(_ current: ImageIndex) throws -> ImageIndex? {
+        let allAfter = try lazyIndex[current.yyyy]?.filter { $0 > current }
+        return allAfter?.first
     }
     
     private static func folderIndexes() throws -> [String: [ImageIndex]] {

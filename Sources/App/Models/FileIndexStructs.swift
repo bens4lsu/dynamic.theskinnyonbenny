@@ -16,7 +16,8 @@ struct ImageIndex: Codable, Comparable {
     
     var context: ImageIndexContext {
         let index = mm + dd
-        let link = AppConfig().imageUrlStart + yyyy + "/" + mm + "/" + dd
+        let config = PublicFileManager.ac
+        let link = config.imageUrlStart + yyyy + "/" + mm + "/" + dd
         return ImageIndexContext(index: index, link: link)
     }
     
@@ -42,7 +43,7 @@ struct FolderContext: Content, Codable {
     
     init(_ index: String) {
         self.index = index
-        self.link = AppConfig().imageUrlStart + index
+        self.link = PublicFileManager.ac.imageUrlStart + index
     }
 }
 
