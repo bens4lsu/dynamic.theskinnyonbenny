@@ -28,7 +28,7 @@ struct Entry: Content, Codable {
         let fullPath = ac.imageUrlStart + imgPath
         self.entryImgPath = fullPath
         self.isValid = true
-        self.date = String(textFileName.prefix(8)).toDate()
+        self.date = String(textFileName.suffix(12).prefix(8)).toDate()
     }
     
     init() {
