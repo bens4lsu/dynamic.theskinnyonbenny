@@ -8,12 +8,12 @@
 import Foundation
 
 
-struct DayCell {
+struct DayCell: Codable {
     var number: Int
     var index: ImageIndex?
 }
 
-class MonthTable {
+class MonthTable: Codable {
     
     static func makeDate(year: Int, month: Int, day: Int) -> Date {
         let calendar = Calendar(identifier: .gregorian)
@@ -23,7 +23,7 @@ class MonthTable {
     
     var cells: [DayCell?]
     
-    init (month: Int, year: Int) {
+    init (month: Int, year: Int) throws {
         
         //  cells gets initialized with 42 items, one for each day spot
         //  on the month table.
@@ -49,17 +49,33 @@ class MonthTable {
                 currDay = nil
             }
             if let day = currDay {
-                table.append(DayCell(number: day, index: nil))
+                let idx = try PublicFileManager.lazyIndex[String(year)]?.filter {
+                    let yyyy = String(year).prependZerosToMake(size: 4)
+                    let mm = String(month).prependZerosToMake(size: 2)
+                    let dd = String(day).prependZerosToMake(size: 2)
+                    return yyyy == $0.yyyy && mm == $0.mm && dd == $0.dd
+                }.first
+                table.append(DayCell(number: day, index: idx))
             }
             else {
                 table.append(nil)
             }
-            
             if currDay != nil {
                 currDay! += 1
             }
-            
         }
         cells = table
+    }
+}
+
+class YearTable: Codable {
+    var tableData: [MonthTable]
+    
+    init(year: Int) throws {
+        var tableData = [MonthTable]()
+        for i in 1...12 {
+            try tableData.append(MonthTable(month: i, year: year))
+        }
+        self.tableData = tableData
     }
 }

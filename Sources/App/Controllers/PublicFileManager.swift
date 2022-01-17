@@ -46,6 +46,16 @@ final class PublicFileManager {
         rootUrl = ac.rootUrl
         return rootUrl!
     }
+    
+    static var imageIndexForToday: ImageIndex {
+        let dt = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let mm = formatter.string(from: dt)
+        formatter.dateFormat = "dd"
+        let dd = formatter.string(from: dt)
+        return ImageIndex(yyyy: currentYear, mm: mm, dd: dd)
+    }
 
     static func textFileContents (_ fileName: String) -> String {
         let url = url.appendingPathComponent(fileName)
@@ -93,12 +103,12 @@ final class PublicFileManager {
     }
     
     static func imageBefore(_ current: ImageIndex) throws -> ImageIndex? {
-        let allBefore = try lazyIndex[current.yyyy]?.filter { $0 < current }
+        let allBefore = try lazyIndex[current.yyyy]?.filter { $0 < current && $0 < imageIndexForToday}
         return allBefore?.last
     }
     
     static func imageAfter(_ current: ImageIndex) throws -> ImageIndex? {
-        let allAfter = try lazyIndex[current.yyyy]?.filter { $0 > current }
+        let allAfter = try lazyIndex[current.yyyy]?.filter { $0 > current && $0 < imageIndexForToday}
         return allAfter?.first
     }
     

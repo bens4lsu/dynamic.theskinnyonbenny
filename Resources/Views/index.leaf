@@ -1,8 +1,10 @@
-<h2 style="padding-bottom:1.5em;">January 10, 2022</h2><div class = "entry">#entryText<br><br><center><img src="#entryImgPath"></center><br><br>
+<h2 style="padding-bottom:1.5em;">#date(entry.date, "MMMM d, yyyy")</h2><div class = "entry">#(entry.entryText)<br><br><center><img src="#(entry.entryImgPath)"></center><br><br>
         
         <!--Twitter and Facebook links  -->
                 <div><a href="http://facebook.com/share.php?u=http%3A%2F%2Ftheskinnyonbenny.com%2Fdailyphoto%2F2022%2Fpage.php%3Fyear%3D2022%26month%3D01%26day%3D10 " target="_blank"><img src="https://theskinnyonbenny.com/blog2/wp-content/plugins/sociable/images/facebook.png" alt="facebook" /></a>
-        <a href="http://twitter.com/home?status=https%3A%2F%2Ftinyurl.com%2Fy53xc9ub" target="_blank"><img src="https://theskinnyonbenny.com/blog2/wp-content/plugins/sociable/images/twitter.gif" alt="twitter" /></a></div>
+        <a href="http://twitter.com/home?status=https%3A%2F%2Ftinyurl.com%2Fy53xc9ub" target="_blank">
+        
+        <img src="https://theskinnyonbenny.com/blog2/wp-content/plugins/sociable/images/twitter.gif" alt="twitter" /></a></div>
 
 
             </div>  </div>  <!--  ends the entry div -->
@@ -168,7 +170,7 @@
 
 <div class="otheryears">
 <h3>Other Years:</h3>
-
-<a href="https://theskinnyonbenny.com/dailyphoto/2005/index.php">2005</a><a href="https://theskinnyonbenny.com/dailyphoto/2006/index.php">2006</a><a href="https://theskinnyonbenny.com/dailyphoto/2007/index.php">2007</a><a href="https://theskinnyonbenny.com/dailyphoto/2008/index.php">2008</a><a href="https://theskinnyonbenny.com/dailyphoto/2009/index.php">2009</a><a href="https://theskinnyonbenny.com/dailyphoto/2010/index.php">2010</a><a href="https://theskinnyonbenny.com/dailyphoto/2011/index.php">2011</a><a href="https://theskinnyonbenny.com/dailyphoto/2012/index.php">2012</a><a href="https://theskinnyonbenny.com/dailyphoto/2013/index.php">2013</a><a href="https://theskinnyonbenny.com/dailyphoto/2014/index.php">2014</a><a href="https://theskinnyonbenny.com/dailyphoto/2015/index.php">2015</a><a href="https://theskinnyonbenny.com/dailyphoto/2016/index.php">2016</a><a href="https://theskinnyonbenny.com/dailyphoto/2017/index.php">2017</a><a href="https://theskinnyonbenny.com/dailyphoto/2018/index.php">2018</a><a href="https://theskinnyonbenny.com/dailyphoto/2019/index.php">2019</a><a href="https://theskinnyonbenny.com/dailyphoto/2020/index.php">2020</a>
+    #for(year in years):
+        <a href="#year.link">#year.index</a>
 </div>
     

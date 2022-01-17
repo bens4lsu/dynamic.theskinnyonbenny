@@ -21,4 +21,15 @@ extension String {
         }
         return nil
     }
+    
+    func dowToNumber() -> Int {
+        if self == "Monday" { return 1 }
+        else if self == "Tuesday" { return 2 }
+        else if self == "Wednesday" { return 3 }
+        else if self == "Thursday" { return 4 }
+        else if self == "Friday" { return 5 }
+        else if self == "Saturday" { return 6 }
+        return 0
+    }
+    
 }
