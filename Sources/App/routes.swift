@@ -1,5 +1,6 @@
 import Vapor
 import Leaf
+import Foundation
 
 
 
@@ -24,6 +25,12 @@ func routes(_ app: Application) throws {
         let year = req.parameters.get("year")!
         let imgIndex = try PublicFileManager.firstImageDay(forYear: year)
         return try await getView(req, year: imgIndex.yyyy, month: imgIndex.mm, day: imgIndex.dd)
+    }
+    
+    app.get("currentImg") { req async throws -> Response in
+        let year =  PublicFileManager.currentYear
+        let imgIndex = try PublicFileManager.firstImageDay(forYear: year)
+        return try await imgIndex.context.link.encodeResponse(for: req)
     }
 }
 

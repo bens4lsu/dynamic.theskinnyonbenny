@@ -140,5 +140,4 @@ final class PublicFileManager {
         }
         return imageList.sorted()
     }
-    
 }
