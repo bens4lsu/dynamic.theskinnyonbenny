@@ -30,8 +30,8 @@ func routes(_ app: Application) throws {
 func getView(_ req: Request, year: String, month: String, day: String) async throws -> View {
     let entry = try Entry(year: year, month: month, day: day)
     let years = try PublicFileManager.yearIndexes(forYear: year)
-    let dayLinks = try PublicFileManager.imageIndexes(forYear: year).map { $0.context }
-    let lc = LocalContext(entry: entry, years: years, dayLinks: dayLinks)
+    let yearTable = try YearTable(year: Int(year) ?? -1)
+    let lc = LocalContext(entry: entry, years: years, dayLinks: yearTable)
     print(lc)
     return try await req.view.render("index", lc)
 }
@@ -39,7 +39,7 @@ func getView(_ req: Request, year: String, month: String, day: String) async thr
 fileprivate struct LocalContext: Content, Codable {
     var entry: Entry
     var years: [FolderContext]
-    var dayLinks: [ImageIndexContext]
+    var dayLinks: YearTable
 }
 
 

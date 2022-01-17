@@ -11,9 +11,10 @@ import Foundation
 struct DayCell: Codable {
     var number: Int
     var index: ImageIndex?
+    var rowBreakAfter: Bool
 }
 
-class MonthTable: Codable {
+struct MonthTable: Codable {
     
     static func makeDate(year: Int, month: Int, day: Int) -> Date {
         let calendar = Calendar(identifier: .gregorian)
@@ -41,7 +42,7 @@ class MonthTable: Codable {
         let lastDayInt = Int(formatter.string(from: lastDayDt))
         var table = [DayCell?]()
         var currDay: Int? = nil
-        for i in 0..<42 {
+        for i in 1...42 {
             if currDay == nil && cellForFirst == i {
                 currDay = 1
             }
@@ -55,7 +56,8 @@ class MonthTable: Codable {
                     let dd = String(day).prependZerosToMake(size: 2)
                     return yyyy == $0.yyyy && mm == $0.mm && dd == $0.dd
                 }.first
-                table.append(DayCell(number: day, index: idx))
+                let rowbreak = i % 7 == 0
+                table.append(DayCell(number: day, index: idx, rowBreakAfter: rowbreak))
             }
             else {
                 table.append(nil)
@@ -68,7 +70,7 @@ class MonthTable: Codable {
     }
 }
 
-class YearTable: Codable {
+struct YearTable: Codable {
     var tableData: [MonthTable]
     
     init(year: Int) throws {

@@ -12,7 +12,7 @@
         <div class="navigation">
             <table border="0" width="100%">
                 <tr><td class="alignleft">
-                    <font size="-1"><a href="https://theskinnyonbenny.com/dailyphoto/2021/page.php?year=2022&month=01&day=04">&laquo; Previous</font></a>                    </td>
+                    <a href="https://theskinnyonbenny.com/dailyphoto/2021/page.php?year=2022&month=01&day=04">&laquo; Previous</a>                    </td>
                     <td class="alignright">
                                             </td>
                 </tr>
@@ -20,148 +20,151 @@
         </div>
 
 
+
+
+
         <center><table border = 1>
 
         <tr>
-<td valign="top" align="center"><font size="-1">
+<td valign="top" align="center">
 <b>January</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td></tr>
-<tr><td><font size="-1">2</font></td><td bgcolor="#dddddd"><font size="-1"><a href="page.php?year=2022&month=1&day=3">3</a></font></td><td bgcolor="#dddddd"><font size="-1"><a href="page.php?year=2022&month=1&day=4">4</a></font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td></tr>
-<tr><td><font size="-1">9</font></td><td bgcolor="#ff00ff"><font size="-1"><a href="page.php?year=2022&month=1&day=10">10</a></font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td></tr>
-<tr><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td></tr>
-<tr><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td></tr>
-<tr><td><font size="-1">30</font></td><td><font size="-1">31</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+<tr><td>2</td><td bgcolor="#dddddd"><a href="page.php?year=2022&month=1&day=3">3</a></td><td bgcolor="#dddddd"><a href="page.php?year=2022&month=1&day=4">4</a></td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+<tr><td>9</td><td bgcolor="#ff00ff"><a href="page.php?year=2022&month=1&day=10">10</a></td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+<tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+<tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+<tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>February</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td></tr>
-<tr><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td></tr>
-<tr><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td></tr>
-<tr><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td></tr>
-<tr><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+<tr><td>27</td><td>28</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>March</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td></tr>
-<tr><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td></tr>
-<tr><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td></tr>
-<tr><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td></tr>
-<tr><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1">31</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+<tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>April</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td></tr>
-<tr><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td></tr>
-<tr><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td></tr>
-<tr><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td></tr>
-<tr><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+<tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+<tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+<tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+<tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
 </table>
-</font></td>
+</td>
 </tr>
 <tr>
-<td valign="top" align="center"><font size="-1">
+<td valign="top" align="center">
 <b>May</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td></tr>
-<tr><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td></tr>
-<tr><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td></tr>
-<tr><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td></tr>
-<tr><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1">31</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+<tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+<tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
+<tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+<tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>June</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td></tr>
-<tr><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td></tr>
-<tr><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td></tr>
-<tr><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td></tr>
-<tr><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+<tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
+<tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
+<tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>July</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td></tr>
-<tr><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td></tr>
-<tr><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td></tr>
-<tr><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td></tr>
-<tr><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td></tr>
-<tr><td><font size="-1">31</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+<tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
+<tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
+<tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
+<tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
+<tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>August</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td></tr>
-<tr><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td></tr>
-<tr><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td></tr>
-<tr><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td></tr>
-<tr><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1">31</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+<tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+<tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+<tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+<tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
+</td>
 </tr>
 <tr>
-<td valign="top" align="center"><font size="-1">
+<td valign="top" align="center">
 <b>September</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td></tr>
-<tr><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td></tr>
-<tr><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td></tr>
-<tr><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td></tr>
-<tr><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+<tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+<tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+<tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>October</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td></tr>
-<tr><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td></tr>
-<tr><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td></tr>
-<tr><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td></tr>
-<tr><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td></tr>
-<tr><td><font size="-1">30</font></td><td><font size="-1">31</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
+<tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+<tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
+<tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
+<tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
+<tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>November</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td><td><font size="-1">4</font></td><td><font size="-1">5</font></td></tr>
-<tr><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td><td><font size="-1">11</font></td><td><font size="-1">12</font></td></tr>
-<tr><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td><td><font size="-1">18</font></td><td><font size="-1">19</font></td></tr>
-<tr><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td><td><font size="-1">25</font></td><td><font size="-1">26</font></td></tr>
-<tr><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+<tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
 </table>
-</font></td>
-<td valign="top" align="center"><font size="-1">
+</td>
+<td valign="top" align="center">
 <b>December</b>
 <table>
-<tr><td><font size="-1"><b>S</b></font></td><td><font size="-1"><b>M</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>W</b></font></td><td><font size="-1"><b>T</b></font></td><td><font size="-1"><b>F</b></font></td><td><font size="-1"><b>S</b></font></td></tr>
-<tr><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1"></font></td><td><font size="-1">1</font></td><td><font size="-1">2</font></td><td><font size="-1">3</font></td></tr>
-<tr><td><font size="-1">4</font></td><td><font size="-1">5</font></td><td><font size="-1">6</font></td><td><font size="-1">7</font></td><td><font size="-1">8</font></td><td><font size="-1">9</font></td><td><font size="-1">10</font></td></tr>
-<tr><td><font size="-1">11</font></td><td><font size="-1">12</font></td><td><font size="-1">13</font></td><td><font size="-1">14</font></td><td><font size="-1">15</font></td><td><font size="-1">16</font></td><td><font size="-1">17</font></td></tr>
-<tr><td><font size="-1">18</font></td><td><font size="-1">19</font></td><td><font size="-1">20</font></td><td><font size="-1">21</font></td><td><font size="-1">22</font></td><td><font size="-1">23</font></td><td><font size="-1">24</font></td></tr>
-<tr><td><font size="-1">25</font></td><td><font size="-1">26</font></td><td><font size="-1">27</font></td><td><font size="-1">28</font></td><td><font size="-1">29</font></td><td><font size="-1">30</font></td><td><font size="-1">31</font></td></tr>
+<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+<tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+<tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+<tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+<tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
 </table>
-</font></td>
+</td>
 </tr>
 
 </table></center>
