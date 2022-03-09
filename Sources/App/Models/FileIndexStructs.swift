@@ -37,13 +37,21 @@ struct ImageIndexContext: Content, Codable {
     var link: String
 }
 
-struct FolderContext: Content, Codable {
+struct FolderContext: Content, Codable, Comparable {
     var index: String
     var link: String
     
     init(_ index: String) {
         self.index = index
         self.link = PublicFileManager.ac.imageUrlStart + index
+    }
+    
+    static func < (lhs: FolderContext, rhs: FolderContext) -> Bool {
+        lhs.index < rhs.index
+    }
+    
+    static func == (lhs: FolderContext, rhs:FolderContext) -> Bool {
+        lhs.index == rhs.index
     }
 }
 

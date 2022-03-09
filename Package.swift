@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "dailyphoto.theskinnyonbenny",
+    name: "dynamic.theskinnyonbenny",
     platforms: [
        .macOS(.v12)
     ],

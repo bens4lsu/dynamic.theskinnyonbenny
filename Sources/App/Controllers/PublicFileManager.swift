@@ -15,7 +15,7 @@ final class PublicFileManager {
     }
     
     static let ac = AppConfig()
-    static let path = DirectoryConfiguration.detect().publicDirectory + "/" + ac.publicSubfolder + "/"
+    static let path = DirectoryConfiguration.detect().publicDirectory + "/" //+ ac.publicSubfolder + "/"
     static let fileManager = FileManager.default
         
     static var url: URL {
@@ -91,7 +91,9 @@ final class PublicFileManager {
     }
     
     static func yearIndexes(forYear year: String) throws -> [FolderContext] {
-        try lazyIndex.map { FolderContext($0.key) }.filter{ $0.index != year }
+        try lazyIndex.map { FolderContext($0.key) }
+            .filter{ $0.index != year }
+            .sorted(by: <)
     }
     
     static func firstImageDay(forYear year: String) throws -> ImageIndex {
