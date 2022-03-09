@@ -43,7 +43,7 @@ struct FolderContext: Content, Codable, Comparable {
     
     init(_ index: String) {
         self.index = index
-        self.link = PublicFileManager.ac.imageUrlStart + index
+        self.link = PublicFileManager.ac.linkUrlStart + index
     }
     
     static func < (lhs: FolderContext, rhs: FolderContext) -> Bool {

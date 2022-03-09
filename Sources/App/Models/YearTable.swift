@@ -16,7 +16,7 @@ enum DayCell: Codable {
         case .empty(let isLast):
             return DayCellContext(displayed: false, number: nil, index: nil, rowBreakAfter: false, isLast: isLast)
         case.numbered(let dayCellContent):
-            return DayCellContext(displayed: true, number: dayCellContent.number, index: dayCellContent.index, rowBreakAfter: dayCellContent.rowBreakAfter, isLast: dayCellContent.isLast)
+            return DayCellContext(displayed: true, number: dayCellContent.number, index: dayCellContent.index, rowBreakAfter: dayCellContent.rowBreakAfter, isLast: dayCellContent.isLast, link:dayCellContent.link )
         }
     }
 }
@@ -26,6 +26,13 @@ struct DayCellContent: Codable {
     var index: ImageIndex?
     var rowBreakAfter: Bool
     var isLast: Bool
+    
+    var link: String? {
+        guard let index = self.index else {
+            return nil
+        }
+        return AppConfig().linkUrlStart + index.yyyy + "/" + index.mm + "/" + index.dd
+    }
 }
 
 struct DayCellContext: Codable {
@@ -34,6 +41,7 @@ struct DayCellContext: Codable {
     var index: ImageIndex?
     var rowBreakAfter: Bool
     var isLast: Bool
+    var link: String?
 }
 
 struct MonthTable: Codable {

@@ -11,11 +11,15 @@ import Vapor
 
 final class AppConfig: Codable {
     var listenOnPort: Int
-    var rootUrl: String
+    private var rootUrl: String
     var publicSubfolder: String
     
     var imageUrlStart: String {
         rootUrl + "/" + publicSubfolder + "/"
+    }
+    
+    var linkUrlStart: String {
+        rootUrl + "/"
     }
     
     init() {

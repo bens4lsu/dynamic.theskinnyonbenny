@@ -15,7 +15,7 @@ final class PublicFileManager {
     }
     
     static let ac = AppConfig()
-    static let path = DirectoryConfiguration.detect().publicDirectory + "/" //+ ac.publicSubfolder + "/"
+    static let path = DirectoryConfiguration.detect().publicDirectory + "/" + ac.publicSubfolder + "/"
     static let fileManager = FileManager.default
         
     static var url: URL {
@@ -39,13 +39,13 @@ final class PublicFileManager {
     }
     
     static var rootUrl: String?
-    static var lazyRootUrl: String {
-        if let url = rootUrl {
-            return url
-        }
-        rootUrl = ac.rootUrl
-        return rootUrl!
-    }
+//    static var lazyRootUrl: String {
+//        if let url = rootUrl {
+//            return url
+//        }
+//        rootUrl = ac.linkUrlStart
+//        return rootUrl!
+//    }
     
     static var imageIndexForToday: ImageIndex {
         let dt = Date()

@@ -1,6 +1,7 @@
 import Foundation
-//import Leaf
+import Leaf
 import Vapor
+import LeafKit
 
 // configures your application
 public func configure(_ app: Application) throws {
@@ -9,6 +10,7 @@ public func configure(_ app: Application) throws {
     let appConfig = PublicFileManager.ac
     app.http.server.configuration.port = appConfig.listenOnPort
     app.views.use(.leaf)
+        
     // register routes
     try routes(app)
 }

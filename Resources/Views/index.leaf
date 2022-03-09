@@ -1,4 +1,4 @@
-<h2 style="padding-bottom:1.5em;">#date(entry.date, "MMMM d, yyyy")</h2><div class = "entry">#(entry.entryText)<br><br><center><img src="#(entry.entryImgPath)"></center><br><br>
+<h2 style="padding-bottom:1.5em;">#date(entry.date, "MMMM d, yyyy")</h2><div class = "entry">#unsafeHTML(entry.entryText)<br><br><center><img src="#(entry.entryImgPath)"></center><br><br>
         
         <!--Twitter and Facebook links  -->
                 <div><a href="http://facebook.com/share.php?u=http%3A%2F%2Ftheskinnyonbenny.com%2Fdailyphoto%2F2022%2Fpage.php%3Fyear%3D2022%26month%3D01%26day%3D10 " target="_blank"><img src="https://theskinnyonbenny.com/blog2/wp-content/plugins/sociable/images/facebook.png" alt="facebook" /></a>
@@ -31,7 +31,16 @@
             <tr>
                 #for(cell in tableMonth.cells):
                     #if(cell.displayed):
-                        <td>#(cell.number)</td>
+                        <td>
+                            #if(cell.index):
+                                <a href="#(cell.link)" class="calendar-inside-link">
+                            #endif
+                            #(cell.number)
+                            #if(cell.index):
+                                </a>
+                            #endif
+                        
+                        </td>
                     #else: <td>&nbsp;</td>
                     #endif
                     
@@ -45,159 +54,6 @@
 
 #endfor
 </table></center>
-
-<!--
-        <tr>
-<td valign="top" align="center">
-
-
-
-<b>January</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
-<tr><td>2</td><td bgcolor="#dddddd"><a href="page.php?year=2022&month=1&day=3">3</a></td><td bgcolor="#dddddd"><a href="page.php?year=2022&month=1&day=4">4</a></td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-<tr><td>9</td><td bgcolor="#ff00ff"><a href="page.php?year=2022&month=1&day=10">10</a></td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-<tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-<tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-<tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>February</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-<tr><td>27</td><td>28</td><td></td><td></td><td></td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>March</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-<tr><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>April</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
-<tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
-<tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-<tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-<tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
-</table>
-</td>
-</tr>
-<tr>
-<td valign="top" align="center">
-<b>May</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
-<tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
-<tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td></tr>
-<tr><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
-<tr><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>June</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-<tr><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
-<tr><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td></tr>
-<tr><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td></tr>
-<tr><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>July</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
-<tr><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td></tr>
-<tr><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-<tr><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td></tr>
-<tr><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td></tr>
-<tr><td>31</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>August</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
-<tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
-<tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
-<tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
-<tr><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td></tr>
-</table>
-</td>
-</tr>
-<tr>
-<td valign="top" align="center">
-<b>September</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-<tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-<tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-<tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-<tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>October</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td>1</td></tr>
-<tr><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
-<tr><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td></tr>
-<tr><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td></tr>
-<tr><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td></tr>
-<tr><td>30</td><td>31</td><td></td><td></td><td></td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>November</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
-<tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
-<tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
-<tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
-<tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
-</table>
-</td>
-<td valign="top" align="center">
-<b>December</b>
-<table>
-<tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-<tr><td></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td></tr>
-<tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
-<tr><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
-<tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
-<tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
-</table>
-</td>
-</tr>
-
-
--->
-
-
-</table></center>
-
 
 
 <div class="otheryears">
