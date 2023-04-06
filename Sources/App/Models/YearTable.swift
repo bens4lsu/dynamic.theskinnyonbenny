@@ -93,7 +93,7 @@ struct MonthTable: Codable {
                 currDay = nil
             }
             if let day = currDay {
-                let idx = try PublicFileManager.lazyIndex[String(year)]?.filter {
+                let idx = try DailyPhotoPublicFileManager.lazyIndex[String(year)]?.filter {
                     let yyyy = String(year).prependZerosToMake(size: 4)
                     let mm = String(month).prependZerosToMake(size: 2)
                     let dd = String(day).prependZerosToMake(size: 2)

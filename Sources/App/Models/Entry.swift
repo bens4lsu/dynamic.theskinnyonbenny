@@ -9,7 +9,7 @@ import Foundation
 import Vapor
 import Leaf
 
-struct Entry: Content, Codable {
+struct DailyPhotoEntry: Content, Codable {
     
     var entryText: String
     var entryImgPath: String
@@ -19,23 +19,23 @@ struct Entry: Content, Codable {
     var linkNext: String?
     
     var ac: AppConfig {
-        PublicFileManager.ac
+        DailyPhotoPublicFileManager.ac
     }
     
     init (year: String, month: String, day: String) throws {
         self.init()
-        guard let textFileName = PublicFileManager.fileNameFor(year: year, month: month, day: day, type: .text),
-              let imgPath = PublicFileManager.fileNameFor(year: year, month: month, day: day, type: .image)
+        guard let textFileName = DailyPhotoPublicFileManager.fileNameFor(year: year, month: month, day: day, type: .text),
+              let imgPath = DailyPhotoPublicFileManager.fileNameFor(year: year, month: month, day: day, type: .image)
         else {
             return
         }
-        self.entryText = PublicFileManager.textFileContents(textFileName)
+        self.entryText = DailyPhotoPublicFileManager.textFileContents(textFileName)
         let fullPath = ac.dpImageUrlStart + imgPath
         self.entryImgPath = fullPath
         self.isValid = true
         self.date = String(textFileName.suffix(12).prefix(8)).toDate()
-        self.linkPrevious = try PublicFileManager.imageBefore(ImageIndex(yyyy: year, mm: month, dd: day))?.context.link
-        self.linkNext = try PublicFileManager.imageAfter(ImageIndex(yyyy: year, mm: month, dd: day))?.context.link
+        self.linkPrevious = try DailyPhotoPublicFileManager.imageBefore(ImageIndex(yyyy: year, mm: month, dd: day))?.context.link
+        self.linkNext = try DailyPhotoPublicFileManager.imageAfter(ImageIndex(yyyy: year, mm: month, dd: day))?.context.link
     }
     
     init() {

@@ -25,8 +25,8 @@ struct DailyPhotoRouteCollection: RouteCollection {
         let dp = routes.grouped("dp")
 
         dp.get { req -> Response in
-            if let year = try PublicFileManager.latestYear() {
-                let imgIndex = try PublicFileManager.lastImageDay(forYear: year)
+            if let year = try DailyPhotoPublicFileManager.latestYear() {
+                let imgIndex = try DailyPhotoPublicFileManager.lastImageDay(forYear: year)
                 return try await getView(req, year: imgIndex.yyyy, month: imgIndex.mm, day: imgIndex.dd).encodeResponse(for: req)
             }
             return try await "It works!".encodeResponse(for: req)
@@ -41,13 +41,13 @@ struct DailyPhotoRouteCollection: RouteCollection {
         
         dp.get(":year") { req -> View in
             let year = req.parameters.get("year")!
-            let imgIndex = try PublicFileManager.firstImageDay(forYear: year)
+            let imgIndex = try DailyPhotoPublicFileManager.firstImageDay(forYear: year)
             return try await getView(req, year: imgIndex.yyyy, month: imgIndex.mm, day: imgIndex.dd)
         }
         
         dp.get("currentImg") { req async throws -> Response in
-            let year =  PublicFileManager.currentYear
-            let imgIndex = try PublicFileManager.firstImageDay(forYear: year)
+            let year =  DailyPhotoPublicFileManager.currentYear
+            let imgIndex = try DailyPhotoPublicFileManager.firstImageDay(forYear: year)
             return try await imgIndex.context.link.encodeResponse(for: req)
         }
     }
@@ -60,15 +60,15 @@ struct DailyPhotoRouteCollection: RouteCollection {
             throw Abort(.badRequest, reason:"year, month, or day input not provided or provided with invalid format.")
         }
         
-        let entry = try Entry(year: year, month: month, day: day)
-        let years = try PublicFileManager.yearIndexes(forYear: year)
+        let entry = try DailyPhotoEntry(year: year, month: month, day: day)
+        let years = try DailyPhotoPublicFileManager.yearIndexes(forYear: year)
         let yearTable = try YearTable(year: yearInt, selectedMonth: monthInt, selectedDay: dayInt)
         let lc = LocalContext(entry: entry, years: years, dayLinks: yearTable)
         return try await req.view.render("index", lc)
     }
 
     fileprivate struct LocalContext: Content, Codable {
-        var entry: Entry
+        var entry: DailyPhotoEntry
         var years: [FolderContext]
         var dayLinks: YearTable
     }

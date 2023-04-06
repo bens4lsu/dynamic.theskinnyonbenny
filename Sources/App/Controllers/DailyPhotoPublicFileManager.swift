@@ -8,18 +8,18 @@
 import Foundation
 import Vapor
 
-final class PublicFileManager {
+final class DailyPhotoPublicFileManager {
     enum FileType: String {
         case text = ".txt"
         case image = ".jpg"
     }
     
     static let ac = AppConfig()
-    static let path = DirectoryConfiguration.detect().publicDirectory + "/" + ac.publicSubfolder + "/"
+    static let dpPath = DirectoryConfiguration.detect().publicDirectory + "/" + ac.dailyPhotoPublicSubfolder + "/"
     static let fileManager = FileManager.default
         
-    static var url: URL {
-        URL(fileURLWithPath: path)
+    static var dpUrl: URL {
+        URL(fileURLWithPath: dpPath)
     }
     
     static var currentYear: String {
@@ -38,15 +38,6 @@ final class PublicFileManager {
         }
     }
     
-//    static var rootUrl: String?
-//    static var lazyRootUrl: String {
-//        if let url = rootUrl {
-//            return url
-//        }
-//        rootUrl = ac.linkUrlStart
-//        return rootUrl!
-//    }
-    
     static var imageIndexForToday: ImageIndex {
         let dt = Date()
         let formatter = DateFormatter()
@@ -58,14 +49,14 @@ final class PublicFileManager {
     }
 
     static func textFileContents (_ fileName: String) -> String {
-        let url = url.appendingPathComponent(fileName)
+        let url = dpUrl.appendingPathComponent(fileName)
         guard let data = try? Data(contentsOf: url) else {
             return ""
         }
         return String(data: data, encoding: .utf8) ?? ""
     }
     
-    static func fileNameFor(year: String, month: String, day: String, type: PublicFileManager.FileType) -> String? {
+    static func fileNameFor(year: String, month: String, day: String, type: DailyPhotoPublicFileManager.FileType) -> String? {
         guard (Int(year) ?? -1) >= 2005 &&
                 (Int(year) ?? -1) < 2200 &&
                 (Int(month) ?? -1) >= 1 &&
@@ -120,9 +111,9 @@ final class PublicFileManager {
     
     private static func folderIndexes() throws -> [String: [ImageIndex]] {
         var dirList = [String: [ImageIndex]]()
-        let dirCandidates = try fileManager.contentsOfDirectory(atPath: path)
+        let dirCandidates = try fileManager.contentsOfDirectory(atPath: dpPath)
         for dirC in dirCandidates {
-            let u = url.appendingPathComponent(dirC)
+            let u = dpUrl.appendingPathComponent(dirC)
             let v = try u.resourceValues(forKeys: [.isDirectoryKey])
             if v.isDirectory! {
                 dirList[dirC] = try imageIndexes(dirC)
@@ -133,7 +124,7 @@ final class PublicFileManager {
   
     private static func imageIndexes(_ subfolder: String) throws -> [ImageIndex] {
         var imageList = [ImageIndex]()
-        let subfolderPath = path + subfolder
+        let subfolderPath = dpPath + subfolder
         let imageCandidates = try fileManager.contentsOfDirectory(atPath: subfolderPath)
         for file in imageCandidates {
             if file.suffix(4) == ".jpg" {

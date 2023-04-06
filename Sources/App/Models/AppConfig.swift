@@ -13,10 +13,11 @@ final class AppConfig: Codable {
     var listenOnPort: Int
     private var rootUrl: String
     var dailyphotoUrlPath: String
-    var publicSubfolder: String
+    var dailyPhotoPublicSubfolder: String
+    var imageGalPublicSubfolder: String
     
     var dpImageUrlStart: String {
-        rootUrl + "/" + publicSubfolder + "/"
+        rootUrl + "/" + dailyPhotoPublicSubfolder + "/"
     }
     
     var dpLinkUrlStart: String {
@@ -34,7 +35,8 @@ final class AppConfig: Codable {
             self.listenOnPort = decoded.listenOnPort
             self.rootUrl = decoded.rootUrl
             self.dailyphotoUrlPath = decoded.dailyphotoUrlPath
-            self.publicSubfolder = decoded.publicSubfolder
+            self.dailyPhotoPublicSubfolder = decoded.dailyPhotoPublicSubfolder
+            self.imageGalPublicSubfolder = decoded.imageGalPublicSubfolder
         }
         catch {
             print ("Could not initialize app from Config.json.  Exiting now. \n \(error)")

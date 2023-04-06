@@ -7,5 +7,6 @@ DerivedData/
 db.sqlite
 .swiftpm
 Public/dailyphoto/*
+Public/gal/*
 Resources/Config.json
 Package.resolved
