@@ -12,14 +12,15 @@ import Vapor
 final class AppConfig: Codable {
     var listenOnPort: Int
     private var rootUrl: String
+    var dailyphotoUrlPath: String
     var publicSubfolder: String
     
-    var imageUrlStart: String {
+    var dpImageUrlStart: String {
         rootUrl + "/" + publicSubfolder + "/"
     }
     
-    var linkUrlStart: String {
-        rootUrl + "/"
+    var dpLinkUrlStart: String {
+        rootUrl + dailyphotoUrlPath + "/"
     }
     
     init() {
@@ -32,6 +33,7 @@ final class AppConfig: Codable {
             
             self.listenOnPort = decoded.listenOnPort
             self.rootUrl = decoded.rootUrl
+            self.dailyphotoUrlPath = decoded.dailyphotoUrlPath
             self.publicSubfolder = decoded.publicSubfolder
         }
         catch {

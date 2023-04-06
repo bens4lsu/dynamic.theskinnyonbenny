@@ -1,65 +1,59 @@
-<h2 style="padding-bottom:1.5em;">#date(entry.date, "MMMM d, yyyy")</h2><div class = "entry">#unsafeHTML(entry.entryText)<br><br><center><img src="#(entry.entryImgPath)"></center><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/dp.css" />
+</head>
+<body>
+
+    <h2 style="padding-bottom:1.5em;">#date(entry.date, "MMMM d, yyyy")</h2>
+    <div class = "entry">
+        <div class="entry-caption">#unsafeHTML(entry.entryText)</div>
+        <div class="entry-img"><img src="#(entry.entryImgPath)"></div>
+    </div>
         
-        <!--Twitter and Facebook links  -->
-                <div><a href="http://facebook.com/share.php?u=http%3A%2F%2Ftheskinnyonbenny.com%2Fdailyphoto%2F2022%2Fpage.php%3Fyear%3D2022%26month%3D01%26day%3D10 " target="_blank"><img src="https://theskinnyonbenny.com/blog2/wp-content/plugins/sociable/images/facebook.png" alt="facebook" /></a>
-        <a href="http://twitter.com/home?status=https%3A%2F%2Ftinyurl.com%2Fy53xc9ub" target="_blank">
-        
-        <img src="https://theskinnyonbenny.com/blog2/wp-content/plugins/sociable/images/twitter.gif" alt="twitter" /></a></div>
+    <div class="navigation">
+        <div class="navigation-previous">#if(entry.linkPrevious): <a href="#unsafeHTML(entry.linkPrevious)">&laquo; Previous</a>#endif</div>
+        <div class="navigation-next">#if(entry.linkNext): <a href="#unsafeHTML(entry.linkNext)">Next &raquo;</a>#endif</div>
+    </div>
 
-
-            </div>  </div>  <!--  ends the entry div -->
-
-        <div class="navigation">
-            <table border="0" width="100%">
-                <tr><td class="alignleft">
-                    <a href="https://theskinnyonbenny.com/dailyphoto/2021/page.php?year=2022&month=01&day=04">&laquo; Previous</a>                    </td>
-                    <td class="alignright">
-                                            </td>
-                </tr>
-            </table>
-        </div>
-
-
-
-
-
-<center><table border = 1><tr>
-#for(tableMonth in dayLinks.tableData):
-    <td valign="top" align="center"><b>#(tableMonth.monthName)</b>
-        <table>
-            <tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
-            <tr>
-                #for(cell in tableMonth.cells):
-                    #if(cell.displayed):
-                        <td>
-                            #if(cell.index):
-                                <a href="#(cell.link)" class="calendar-inside-link">
-                            #endif
-                            #(cell.number)
-                            #if(cell.index):
-                                </a>
-                            #endif
+    <table class="bigtable" border = 1><tr>
+        #for(tableMonth in dayLinks.tableData):
+            <td valign="top" align="center"><b>#(tableMonth.monthName)</b>
+                <table class="littletable">
+                    <tr><td><b>S</b></td><td><b>M</b></td><td><b>T</b></td><td><b>W</b></td><td><b>T</b></td><td><b>F</b></td><td><b>S</b></td></tr>
+                    <tr>
+                        #for(cell in tableMonth.cells):
+                            #if(cell.displayed):
+                                <td #if(cell.index):class="cell-with-link"#endif>
+                                    #if(cell.index):
+                                        <a href="#(cell.link)" class="calendar-inside-link">
+                                    #endif
+                                    #(cell.number)
+                                    #if(cell.index):
+                                        </a>
+                                    #endif
                         
-                        </td>
-                    #else: <td>&nbsp;</td>
-                    #endif
+                                </td>
+                            #else: <td>&nbsp;</td>
+                            #endif
                     
-                    #if(cell.rowBreakAfter): </tr><tr> #endif
-                #endfor
-        </table>
-    </td>
+                            #if(cell.rowBreakAfter): </tr><tr> #endif
+                        #endfor
+                    </table>
+                </td>
 
-    #if(tableMonth.breakAfter): </tr><tr>  #endif
-    #if(tableMonth.isLast): </tr> #endif
+                #if(tableMonth.breakAfter): </tr><tr>  #endif
+                #if(tableMonth.isLast): </tr> #endif
+            #endfor
+      </table>
 
-#endfor
-</table></center>
 
-
-<div class="otheryears">
-<h3>Other Years:</h3>
-    #for(year in years):
-        <a href="#(year.link)">#(year.index)</a>
-    #endfor
-</div>
-    
+    <div class="otheryears">
+    <h3>Other Years:</h3>
+        #for(year in years):
+            <a href="#(year.link)">#(year.index)</a>
+        #endfor
+    </div>
+</body>    

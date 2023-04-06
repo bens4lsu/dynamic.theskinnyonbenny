@@ -31,7 +31,7 @@ struct DayCellContent: Codable {
         guard let index = self.index else {
             return nil
         }
-        return AppConfig().linkUrlStart + index.yyyy + "/" + index.mm + "/" + index.dd
+        return AppConfig().dpLinkUrlStart + index.yyyy + "/" + index.mm + "/" + index.dd
     }
 }
 
@@ -101,7 +101,11 @@ struct MonthTable: Codable {
                 table.append(DayCell.numbered(dayCellContent).context)
             }
             else {
-                table.append(DayCell.empty(isLast: isLast).context)
+                var dc = DayCell.empty(isLast: isLast).context
+                if i % 7 == 0 {
+                    dc.rowBreakAfter = true
+                }
+                table.append(dc)
             }
             if currDay != nil {
                 currDay! += 1

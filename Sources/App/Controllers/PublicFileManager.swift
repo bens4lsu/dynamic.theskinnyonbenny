@@ -38,7 +38,7 @@ final class PublicFileManager {
         }
     }
     
-    static var rootUrl: String?
+//    static var rootUrl: String?
 //    static var lazyRootUrl: String {
 //        if let url = rootUrl {
 //            return url
@@ -98,6 +98,10 @@ final class PublicFileManager {
     
     static func firstImageDay(forYear year: String) throws -> ImageIndex {
         try lazyIndex[year]?.first ?? ImageIndex(yyyy: "0000", mm: "00", dd: "00")
+    }
+    
+    static func lastImageDay(forYear year: String) throws -> ImageIndex {
+        try lazyIndex[year]?.last ?? ImageIndex(yyyy: "0000", mm: "00", dd: "00")
     }
     
     static func latestYear() throws -> String? {
