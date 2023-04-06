@@ -53,9 +53,16 @@ struct DailyPhotoRouteCollection: RouteCollection {
     }
     
     fileprivate func getView(_ req: Request, year: String, month: String, day: String) async throws -> View {
+        guard let yearInt = Int(year),
+              let monthInt = Int(month),
+              let dayInt = Int(day)
+        else {
+            throw Abort(.badRequest, reason:"year, month, or day input not provided or provided with invalid format.")
+        }
+        
         let entry = try Entry(year: year, month: month, day: day)
         let years = try PublicFileManager.yearIndexes(forYear: year)
-        let yearTable = try YearTable(year: Int(year) ?? -1)
+        let yearTable = try YearTable(year: yearInt, selectedMonth: monthInt, selectedDay: dayInt)
         let lc = LocalContext(entry: entry, years: years, dayLinks: yearTable)
         return try await req.view.render("index", lc)
     }

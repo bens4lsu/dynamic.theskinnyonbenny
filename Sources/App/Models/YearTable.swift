@@ -14,9 +14,9 @@ enum DayCell: Codable {
     var context: DayCellContext {
         switch self {
         case .empty(let isLast):
-            return DayCellContext(displayed: false, number: nil, index: nil, rowBreakAfter: false, isLast: isLast)
+            return DayCellContext(displayed: false, number: nil, index: nil, rowBreakAfter: false, isLast: isLast, isSelected: false)
         case.numbered(let dayCellContent):
-            return DayCellContext(displayed: true, number: dayCellContent.number, index: dayCellContent.index, rowBreakAfter: dayCellContent.rowBreakAfter, isLast: dayCellContent.isLast, link:dayCellContent.link )
+            return DayCellContext(displayed: true, number: dayCellContent.number, index: dayCellContent.index, rowBreakAfter: dayCellContent.rowBreakAfter, isLast: dayCellContent.isLast, link:dayCellContent.link, isSelected: dayCellContent.isSelected )
         }
     }
 }
@@ -33,6 +33,8 @@ struct DayCellContent: Codable {
         }
         return AppConfig().dpLinkUrlStart + index.yyyy + "/" + index.mm + "/" + index.dd
     }
+    
+    var isSelected: Bool = false
 }
 
 struct DayCellContext: Codable {
@@ -42,6 +44,7 @@ struct DayCellContext: Codable {
     var rowBreakAfter: Bool
     var isLast: Bool
     var link: String?
+    var isSelected: Bool
 }
 
 struct MonthTable: Codable {
@@ -57,7 +60,7 @@ struct MonthTable: Codable {
     var breakAfter: Bool
     var isLast: Bool
     
-    init (month: Int, year: Int) throws {
+    init (month: Int, year: Int, selectedMonth: Int, selectedDay: Int) throws {
         
         //  cells gets initialized with 42 items, one for each day spot
         //  on the month table.
@@ -97,7 +100,8 @@ struct MonthTable: Codable {
                     return yyyy == $0.yyyy && mm == $0.mm && dd == $0.dd
                 }.first
                 let rowbreak = i % 7 == 0
-                let dayCellContent = DayCellContent(number: day, index: idx, rowBreakAfter: rowbreak, isLast: isLast)
+                let isSelected = month == selectedMonth && day == selectedDay
+                let dayCellContent = DayCellContent(number: day, index: idx, rowBreakAfter: rowbreak, isLast: isLast, isSelected: isSelected)
                 table.append(DayCell.numbered(dayCellContent).context)
             }
             else {
@@ -118,10 +122,10 @@ struct MonthTable: Codable {
 struct YearTable: Codable {
     var tableData: [MonthTable]
     
-    init(year: Int) throws {
+    init(year: Int, selectedMonth: Int, selectedDay: Int) throws {
         var tableData = [MonthTable]()
         for i in 1...12 {
-            try tableData.append(MonthTable(month: i, year: year))
+            try tableData.append(MonthTable(month: i, year: year, selectedMonth: selectedMonth, selectedDay: selectedDay))
         }
         self.tableData = tableData
     }

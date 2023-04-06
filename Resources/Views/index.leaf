@@ -26,7 +26,7 @@
                     <tr>
                         #for(cell in tableMonth.cells):
                             #if(cell.displayed):
-                                <td #if(cell.index):class="cell-with-link"#endif>
+                                <td #if(cell.index):class="cell-with-link#if(cell.isSelected): cell-selected#endif"#endif>
                                     #if(cell.index):
                                         <a href="#(cell.link)" class="calendar-inside-link">
                                     #endif

@@ -1,0 +1,62 @@
+body {
+    background-color: #B5B6CD;
+}
+
+.entry {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.entry-img {
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.entry-caption {
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.navigation-previous {
+    float: left;
+    margin:0 0 20px 45px;
+}
+
+.navigation-next {
+    float: right;
+    margin: 0 45px 20px 0;
+}
+
+.bigtable {
+    margin: 0 auto;
+}
+
+.littletable {
+    border-spacing: 4px 3px;
+}
+
+.littletable td {
+    padding: 2px 3px;
+    text-align:center;
+}
+
+.cell-with-link {
+    background-color: #DDDDDD;
+}
+
+.cell-with-link a {
+    color: #9e2606;
+}
+
+.cell-selected {
+    background-color: #9e2606;
+}
+
+.cell-selected a {
+    color: #dddddd;
+}
+
+.otheryears a {
+    margin-right: 15px;
+}
