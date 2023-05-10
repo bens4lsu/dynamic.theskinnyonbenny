@@ -30,7 +30,6 @@ final class AppConfig: Codable {
         do {
             let path = DirectoryConfiguration.detect().resourcesDirectory
             let url = URL(fileURLWithPath: path).appendingPathComponent("Config.json")
-            print (url.absoluteString)
             let data = try Data(contentsOf: url)
             let decoded = try JSONDecoder().decode(Self.self, from: data)
             
