@@ -47,7 +47,7 @@ struct DailyPhotoRouteCollection: RouteCollection {
         
         dp.get("currentImg") { req async throws -> Response in
             let year =  DailyPhotoPublicFileManager.currentYear
-            let imgIndex = try DailyPhotoPublicFileManager.firstImageDay(forYear: year)
+            let imgIndex = try DailyPhotoPublicFileManager.lastImageDay(forYear: year)
             let link = ac.dpImageUrlStart + imgIndex.imgSrc
             return try await link.encodeResponse(for: req)
         }
