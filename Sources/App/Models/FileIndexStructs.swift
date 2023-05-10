@@ -21,6 +21,10 @@ struct ImageIndex: Codable, Comparable {
         return ImageIndexContext(index: index, link: link)
     }
     
+    var imgSrc: String {
+        "\(yyyy)/\(yyyy)\(mm)\(dd).jpg"
+    }
+    
     static func < (lhs: ImageIndex, rhs: ImageIndex) -> Bool {
         if lhs.yyyy != rhs.yyyy { return lhs.yyyy < rhs.yyyy }
         if lhs.mm != rhs.mm { return lhs.mm < rhs.mm }
