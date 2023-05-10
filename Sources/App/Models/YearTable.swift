@@ -70,7 +70,7 @@ struct MonthTable: Codable {
         formatter.dateFormat = "MMMM"
         self.monthName = formatter.string(from: dt)
         
-        self.breakAfter = month == 4 || month == 8
+        self.breakAfter = month == 3 || month == 6 || month == 9
         self.isLast = month == 12
         
         formatter.dateFormat = "EEEE"
