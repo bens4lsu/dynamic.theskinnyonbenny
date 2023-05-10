@@ -15,7 +15,7 @@ final class DailyPhotoPublicFileManager {
     }
     
     static let ac = AppConfig()
-    static let dpPath = DirectoryConfiguration.detect().publicDirectory + "/" + ac.dailyPhotoPublicSubfolder + "/"
+    static let dpPath = ac.serverPath + "/"
     static let fileManager = FileManager.default
         
     static var dpUrl: URL {

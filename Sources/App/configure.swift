@@ -13,7 +13,7 @@ public func configure(_ app: Application) throws {
         
     
     let x = try ImageGalleryPublicFileManager.getGalleries() //(atPath: "175 - Europe 2022 pt 2 - Coastal Croatia")
-    print(x)
+    //print(x)
     // register routes
     try routes(app, appConfig)
 }
