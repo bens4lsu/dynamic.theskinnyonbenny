@@ -28,13 +28,10 @@ final class DailyPhotoPublicFileManager {
         return formatter.string(from: Date())
     }
     
-    static var bigIndex = [String: [ImageIndex]]()
+    //static var bigIndex = [String: [ImageIndex]]()
     static var lazyIndex: [String: [ImageIndex]] {
         get throws {
-            if bigIndex.isEmpty {
-                bigIndex = try folderIndexes()
-            }
-            return bigIndex
+            try folderIndexes()
         }
     }
     
