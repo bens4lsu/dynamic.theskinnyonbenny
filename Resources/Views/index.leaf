@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/dp.css" />
+    <script>
+        window.scrollTo(0, 0);
+    </script>
 </head>
 <body>
 
@@ -57,7 +60,5 @@
         #endfor
     </div>
     
-    <script>
-        window.scrollTo(0, 0);
-    </script>
+
 </body>    

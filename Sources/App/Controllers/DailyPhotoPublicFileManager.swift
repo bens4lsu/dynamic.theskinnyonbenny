@@ -105,12 +105,12 @@ final class DailyPhotoPublicFileManager {
     }
     
     static func imageBefore(_ current: ImageIndex) throws -> ImageIndex? {
-        let allBefore = try lazyIndex[current.yyyy]?.filter { $0 < current && $0 < imageIndexForToday}
+        let allBefore = try lazyIndex[current.yyyy]?.filter { $0 < current && $0 <= imageIndexForToday}
         return allBefore?.last
     }
     
     static func imageAfter(_ current: ImageIndex) throws -> ImageIndex? {
-        let allAfter = try lazyIndex[current.yyyy]?.filter { $0 > current && $0 < imageIndexForToday}
+        let allAfter = try lazyIndex[current.yyyy]?.filter { $0 > current && $0 <= imageIndexForToday}
         return allAfter?.first
     }
     
