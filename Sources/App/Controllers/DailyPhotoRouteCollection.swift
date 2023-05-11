@@ -51,7 +51,7 @@ struct DailyPhotoRouteCollection: RouteCollection {
             let link = ac.dpImageUrlStart + imgIndex.imgSrc
             return try await link.encodeResponse(for: req)
         }
-        
+
     }
     
     fileprivate func getView(_ req: Request, year: String, month: String, day: String) async throws -> View {

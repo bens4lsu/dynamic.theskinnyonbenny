@@ -28,10 +28,18 @@ final class DailyPhotoPublicFileManager {
         return formatter.string(from: Date())
     }
     
-    //static var bigIndex = [String: [ImageIndex]]()
+    static var bigIndex = [String: [ImageIndex]]()
+    static var bigIndexLastRefresh = Date()
+    
     static var lazyIndex: [String: [ImageIndex]] {
         get throws {
-            try folderIndexes()
+            if bigIndex == [:] {
+                bigIndex = try folderIndexes()
+            }
+            else if bigIndexLastRefresh.yyyyMMddString < Date().yyyyMMddString {
+                bigIndex[currentYear] = try imageIndexes(forYear: currentYear)
+            }
+            return bigIndex
         }
     }
     
@@ -129,7 +137,9 @@ final class DailyPhotoPublicFileManager {
                 let dd = String(file.prefix(8).suffix(2))
                 let yyyy = String(file.prefix(4))
                 let imgIndex = ImageIndex(yyyy: yyyy, mm: mm, dd: dd)
-                imageList.append(imgIndex)
+                if imgIndex <= imageIndexForToday {
+                    imageList.append(imgIndex)
+                }
             }
         }
         return imageList.sorted()

@@ -16,4 +16,7 @@ public func configure(_ app: Application) throws {
     //print(x)
     // register routes
     try routes(app, appConfig)
+    
+    // load image index on startup
+    let _ = try DailyPhotoPublicFileManager.lazyIndex
 }
