@@ -7,8 +7,9 @@
 
 import Foundation
 import Vapor
+import Leaf
 
-struct Gallery {
+struct Gallery: Content {
     var id: Int
     var name: String
     var path: String
@@ -18,7 +19,7 @@ struct Gallery {
     var images = [GalleryImage]()
 }
 
-struct GalleryImage {
+struct GalleryImage: Content {
     var lineNum: Int
     var imagePath: String
     var caption: String

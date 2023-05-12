@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/dp.css" />
+    <script>
+        window.scrollTo(0, 0);
+    </script>
+</head>
+<body>
+        
+    <h2>The Photo Collections...</h2><p>Click on any of the pictures in this part of the page to open the whole set of photos for that collection.  If this is your first trip in, give it a minute.  It may take this page a little while to load all of the pictures, but I like having one big giant list of my photo albums in one place.</p>
+
+    <table border="0" cellpadding="2em" cellspacing="0" width="100%" height="1">
+    #for(gallery in galleries):
+        <tr><td>#(gallery.name)</td></tr>
+    #endfor
+    
+    </table>
+    
+
+</body>

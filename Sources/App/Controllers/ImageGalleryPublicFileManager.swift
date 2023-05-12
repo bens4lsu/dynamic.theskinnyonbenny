@@ -7,6 +7,7 @@
 
 import Foundation
 import Vapor
+import Leaf
 
 class ImageGalleryPublicFileManager {
     static let ac = AppConfig()
@@ -35,7 +36,7 @@ class ImageGalleryPublicFileManager {
         let normalImagePath = galleryPath  + "/data/normal.jpg"
         let redImagePath = galleryPath + "/data/red.jpg"
         var galDesc: String?
-        var images = [GalleryImage]()
+        let images = [GalleryImage]()
         if includeDetails {
             galDesc = try fileContents(atPath: galleryPath + "/gal-desc.txt")
         }
@@ -47,8 +48,7 @@ class ImageGalleryPublicFileManager {
         else {
             throw Abort(.internalServerError, reason: "no space in gallery directory name: \(path)")
         }
-        let lastSlashIndex = path.lastIndex(of: "/") ?? path.startIndex
-        let idStartIndex = path.index(after: lastSlashIndex)
+        let idStartIndex = path.lastIndex(of: "/") ?? path.startIndex
         let idStr = String(path[idStartIndex...idEndIndex]).trimmingCharacters(in: .whitespaces)
         guard let id = Int(idStr) else {
             throw Abort(.internalServerError, reason: "gallery directory name starts with non-integer value \(idStr)")
