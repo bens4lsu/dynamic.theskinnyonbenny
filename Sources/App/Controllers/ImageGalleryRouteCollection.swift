@@ -25,7 +25,12 @@ struct ImageGalleryRouteCollection: RouteCollection {
         }
         
         gal.get(":id") { req -> View in
-            let gallery = try ImageGalleryPublicFileManager.getGallery(176)
+            guard let parameter = req.parameters.get("id"),
+                  let id = Int(parameter)
+            else {
+                throw Abort (.badRequest, reason: "Gallery ID in request was not numeric.")
+            }
+            let gallery = try ImageGalleryPublicFileManager.getGallery(id)
             return try await req.view.render("gallery", gallery)
         }
     }

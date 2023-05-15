@@ -27,9 +27,11 @@ class ImageGalleryPublicFileManager {
                 try workingList.append(loadGalleryLight(atPath: dirC))
             }
         }
+        workingList.sort(by: { $0.id > $1.id })
+        
         // set which column the gallery should show up on on the main page
         for i in 0..<workingList.count {
-            if (workingList.count.isEven && workingList[i].id.isEven) || (workingList.count.isOdd && workingList[i].id.isOdd) {
+            if (workingList.count.isEven && i.isOdd) || (workingList.count.isOdd && i.isEven) {
                 workingList[i].column = .left
             }
             else {
@@ -37,7 +39,7 @@ class ImageGalleryPublicFileManager {
             }
         }
         
-        workingList.sort(by: { $0.id > $1.id })
+        
         return workingList
     }
     
