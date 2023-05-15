@@ -11,7 +11,7 @@ import Vapor
 
 final class AppConfig: Codable {
     var listenOnPort: Int
-    private var rootUrl: String
+    var rootUrl: String
     var dailyphotoUrlPath: String
     var dailyPhotoPublicSubfolder: String
     var imageGalPublicSubfolder: String

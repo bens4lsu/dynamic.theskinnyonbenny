@@ -61,3 +61,24 @@ body {
 .otheryears a {
     margin-right: 15px;
 }
+
+.caption, .igal-caption{
+    font-family: verdana, arial, geneva;
+    font-size: 11px;
+    color: #666666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.caption {
+    text-align: left;
+}
+
+.igal-caption{
+    width: 100%;
+    text-align: center;
+    padding-bottom:4em;
+}
+
+
+

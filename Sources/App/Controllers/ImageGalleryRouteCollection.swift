@@ -21,7 +21,6 @@ struct ImageGalleryRouteCollection: RouteCollection {
         
         gal.get { req -> View in
             let galleries = try ImageGalleryPublicFileManager.getGalleries()
-            print(galleries)
             return try await req.view.render("galleries", ["galleries" : galleries])
         }
     }

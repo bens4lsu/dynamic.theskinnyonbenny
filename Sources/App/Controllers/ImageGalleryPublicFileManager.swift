@@ -27,18 +27,30 @@ class ImageGalleryPublicFileManager {
                 try workingList.append(loadGallery(atPath: dirC, includeDetails: false))
             }
         }
+        // set which column the gallery should show up on on the main page
+        for i in 0..<workingList.count {
+            if (workingList.count.isEven && workingList[i].id.isEven) || (workingList.count.isOdd && workingList[i].id.isOdd) {
+                workingList[i].column = .left
+            }
+            else {
+                workingList[i].column = .right
+            }
+        }
+        
+        workingList.sort(by: { $0.id > $1.id })
         return workingList
     }
     
     private static func loadGallery(atPath path: String, includeDetails: Bool) throws -> Gallery{
         let (id, name) = try idFromFolderName(atPath: path)
-        let galleryPath = galPath + path
-        let normalImagePath = galleryPath  + "/data/normal.jpg"
-        let redImagePath = galleryPath + "/data/red.jpg"
+        let galleryPath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + String(id)
+        let normalImagePath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + path + "/data/normal.jpg"
+        let redImagePath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + path + "/data/red.jpg"
         var galDesc: String?
-        let images = [GalleryImage]()
+        var images = [GalleryImage]()
         if includeDetails {
             galDesc = try fileContents(atPath: galleryPath + "/gal-desc.txt")
+            images = try loadImages(forGallery: path)
         }
         return Gallery(id: id, name: name, path: galleryPath, html: galDesc, normalImagePath: normalImagePath, redImagePath: redImagePath, images: images)
     }
@@ -61,5 +73,41 @@ class ImageGalleryPublicFileManager {
     private static func fileContents(atPath path: String) throws -> String {
         try String(contentsOfFile: path)
     }
+    
+    public static func loadImages(forGallery path: String) throws -> [GalleryImage] {
+        let folder = galPath + path
+        let files = try fileManager.contentsOfDirectory(atPath: galPath + "/" + path)
+        let captions = try captions(forGallery: path)
+        var images = [GalleryImage]()
+        for file in files {
+            if file.prefix(5) != "_thb_" && file.suffix(4) == ".jpg" {
+                let imagePath = file
+                let thumbnailPath = "_thb_" + imagePath
+                
+                let i = GalleryImage(lineNum: 0, imagePath:"" , thumbnailpath: "", caption: "")
+            }
+        }
+        
+        return [];
+    }
+    
+    private static func captions (forGallery path: String) throws -> [String: String] {
+        let captionFile = galPath + path + "/pic-desc.txt"
+        guard let captionContents = try? fileContents(atPath: captionFile) else {
+            return [:]
+        }
+        let lines = captionContents.split(whereSeparator: \.isNewline)
+        let dict = lines.reduce(into: [String: String]()) { result, line in
+            let split = line.split(separator: "|")
+            if split.count > 1 {
+                result[String(split[0])] = String(split[1])
+            }
+            else {
+                result[String(split[0])] = ""
+            }
+        }
+        return dict
+    }
+    
     
 }

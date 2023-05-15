@@ -19,4 +19,5 @@ public func configure(_ app: Application) throws {
     
     // load image index on startup
     let _ = try DailyPhotoPublicFileManager.lazyIndex
+    let _ = try ImageGalleryPublicFileManager.loadImages(forGallery: "176 - Eurpoe 2022 pt 1 - Slovenia Croatia Montenegro")
 }
