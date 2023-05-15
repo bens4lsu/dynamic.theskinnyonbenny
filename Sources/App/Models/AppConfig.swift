@@ -16,6 +16,7 @@ final class AppConfig: Codable {
     var dailyPhotoPublicSubfolder: String
     var imageGalPublicSubfolder: String
     var serverPath: String
+    var serverPathGal: String
     
     var dpImageUrlStart: String {
         rootUrl + "/" + dailyPhotoPublicSubfolder + "/"
@@ -39,6 +40,7 @@ final class AppConfig: Codable {
             self.dailyPhotoPublicSubfolder = decoded.dailyPhotoPublicSubfolder
             self.imageGalPublicSubfolder = decoded.imageGalPublicSubfolder
             self.serverPath = decoded.serverPath
+            self.serverPathGal = decoded.serverPathGal
         }
         catch {
             print ("Could not initialize app from Config.json.  Exiting now. \n \(error)")

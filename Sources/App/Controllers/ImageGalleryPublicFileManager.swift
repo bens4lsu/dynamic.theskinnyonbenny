@@ -41,6 +41,14 @@ class ImageGalleryPublicFileManager {
         return workingList
     }
     
+    static func getGallery(_ id: Int) throws -> Gallery {
+        guard let gallery = try getGalleries().filter({ $0.id == id }).first else {
+            throw Abort (.badRequest, reason: "Request for gallery using invalid id \(id)")
+        }
+        print (gallery)
+        
+    }
+    
     private static func loadGallery(atPath path: String, includeDetails: Bool) throws -> Gallery{
         let (id, name) = try idFromFolderName(atPath: path)
         let galleryPath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + String(id)
@@ -49,8 +57,8 @@ class ImageGalleryPublicFileManager {
         var galDesc: String?
         var images = [GalleryImage]()
         if includeDetails {
-            galDesc = try fileContents(atPath: galleryPath + "/gal-desc.txt")
-            images = try loadImages(forGallery: path)
+            galDesc = try fileContents(atPath: ac.serverPathGal + path + "/gal-desc.txt")
+            images = try galleryDetails(forGallery: path)
         }
         return Gallery(id: id, name: name, path: galleryPath, html: galDesc, normalImagePath: normalImagePath, redImagePath: redImagePath, images: images)
     }
@@ -74,39 +82,27 @@ class ImageGalleryPublicFileManager {
         try String(contentsOfFile: path)
     }
     
-    public static func loadImages(forGallery path: String) throws -> [GalleryImage] {
-        let folder = galPath + path
-        let files = try fileManager.contentsOfDirectory(atPath: galPath + "/" + path)
-        let captions = try captions(forGallery: path)
-        var images = [GalleryImage]()
-        for file in files {
-            if file.prefix(5) != "_thb_" && file.suffix(4) == ".jpg" {
-                let imagePath = file
-                let thumbnailPath = "_thb_" + imagePath
-                
-                let i = GalleryImage(lineNum: 0, imagePath:"" , thumbnailpath: "", caption: "")
-            }
-        }
-        
-        return [];
-    }
-    
-    private static func captions (forGallery path: String) throws -> [String: String] {
+    private static func galleryDetails (forGallery path: String) throws -> [GalleryImage] {
         let captionFile = galPath + path + "/pic-desc.txt"
         guard let captionContents = try? fileContents(atPath: captionFile) else {
-            return [:]
+            throw Abort (.internalServerError, reason: "Error reading caption file for \(path)")
         }
         let lines = captionContents.split(whereSeparator: \.isNewline)
-        let dict = lines.reduce(into: [String: String]()) { result, line in
+        var images = [GalleryImage]()
+        for i in 0..<lines.count{
+            let line = lines[i]
             let split = line.split(separator: "|")
+            var caption = ""
             if split.count > 1 {
-                result[String(split[0])] = String(split[1])
+                caption = String(split[1])
             }
-            else {
-                result[String(split[0])] = ""
-            }
+            let imagePath = String(split[0])
+            let thumbnailPath = "_thb_" + String(split[0])
+            let galleryImage = GalleryImage(lineNum: i+1, imagePath: imagePath, thumbnailpath: thumbnailPath, caption: caption)
+            images.append(galleryImage)
         }
-        return dict
+        print(images)
+        return images
     }
     
     
