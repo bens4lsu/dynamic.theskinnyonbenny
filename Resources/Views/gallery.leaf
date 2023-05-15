@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://theskinnyonbenny.com/lightview.css" type="text/css" />
+
+    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/excanvas.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/lightview.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/spinners.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/dp.css" />
+    
+    <style>
+         #header {
+            background: url("https://theskinnyonbenny.com/img/headers/header-theskinnyonbenny.jpg") no-repeat bottom center;
+         }
+    </style>
+    
+    
+
+
+</head>
+<body>
+    <div id="header">
+
+    </div>
+
+    <a href="https://theskinnyonbenny.com/pgHome.php">&lt;&lt; Back to List of Galleries</a>
+        
+    #unsafeHTML(html)
+    
+    <div style="float:right; background-color:#CDCDCD; border:2px solid #AD7070; width:280px; padding:7px;" class="datestamp">Picture Navigation: Click any thumbnail to open the full size image and caption.  When the full image appears, you can scroll to the next using left and right buttons to the corresponding side of the picture.  Your keyboard's arrow keys should also work, as will the scroll wheel on most computers.
+        Picture Navigation: Click any thumbnail to open the full size image and caption.  When the full image appears, you can scroll to the next using left and right buttons to the corresponding side of the picture.  Your keyboard's arrow keys should also work, as will the scroll wheel on most computers.
+    </div>
+
+    
+    #for(image in images):
+        <a class="lightview" href="#(imgRootPath)#(image.imagePath)" data-lightview-caption="#(image.caption)" data-lightview-group="group1"><img src="#(imgRootPath)#(image.thumbnailpath)" alt="#(image.imagePath)"></a>
+    #endfor
+    
+
+</body>

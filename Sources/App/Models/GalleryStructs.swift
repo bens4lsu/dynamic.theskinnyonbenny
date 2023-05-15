@@ -20,6 +20,8 @@ struct Gallery: Content {
     var id: Int
     var name: String
     var path: String
+    var filePath: String
+    var imgRootPath: String
     var html: String?
     var normalImagePath: String
     var redImagePath: String

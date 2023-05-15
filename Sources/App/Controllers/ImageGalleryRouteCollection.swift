@@ -25,7 +25,8 @@ struct ImageGalleryRouteCollection: RouteCollection {
         }
         
         gal.get(":id") { req -> View in
-            let gallery = try ImageGalleryPublicFileManager.loadGallery(atPath: <#T##String#>, includeDetails: <#T##Bool#>)
+            let gallery = try ImageGalleryPublicFileManager.getGallery(176)
+            return try await req.view.render("gallery", gallery)
         }
     }
 }

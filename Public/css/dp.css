@@ -80,5 +80,22 @@ body {
     padding-bottom:4em;
 }
 
+.datestamp {
+    font-family: Arial, Helvetica, Sans-Serif;
+    line-height: 1em;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: #4C4C4C;
+    font-size: 100%;
+    font-weight: bold;
+    line-height: 125%;`
+}
+
+.lightview {
+    margin:12px;
+    display:inline-block;
+    vertical-align:middle;
+}
+
 
 

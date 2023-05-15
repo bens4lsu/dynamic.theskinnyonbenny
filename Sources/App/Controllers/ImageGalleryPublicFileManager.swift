@@ -11,7 +11,7 @@ import Leaf
 
 class ImageGalleryPublicFileManager {
     static let ac = AppConfig()
-    static let galPath = DirectoryConfiguration.detect().publicDirectory + "/" + ac.imageGalPublicSubfolder + "/"
+    static let galPath = DirectoryConfiguration.detect().publicDirectory + ac.imageGalPublicSubfolder + "/"
     static let fileManager = FileManager.default    
     static var galUrl: URL {
         URL(fileURLWithPath: galPath)
@@ -24,7 +24,7 @@ class ImageGalleryPublicFileManager {
             let u = galUrl.appendingPathComponent(dirC)
             let v = try u.resourceValues(forKeys: [.isDirectoryKey])
             if v.isDirectory! {
-                try workingList.append(loadGallery(atPath: dirC, includeDetails: false))
+                try workingList.append(loadGalleryLight(atPath: dirC))
             }
         }
         // set which column the gallery should show up on on the main page
@@ -42,25 +42,28 @@ class ImageGalleryPublicFileManager {
     }
     
     static func getGallery(_ id: Int) throws -> Gallery {
-        guard let gallery = try getGalleries().filter({ $0.id == id }).first else {
+        guard var gallery = try getGalleries().filter({ $0.id == id }).first else {
             throw Abort (.badRequest, reason: "Request for gallery using invalid id \(id)")
         }
-        print (gallery)
-        
+        gallery.images = try galleryDetails(forGallery: gallery.filePath)
+        gallery.html = try? fileContents(atPath: "\(gallery.filePath)/gal-desc.txt")
+        print(gallery)
+        return gallery
     }
     
-    private static func loadGallery(atPath path: String, includeDetails: Bool) throws -> Gallery{
+    // MARK: Private
+    
+    private static func loadGalleryLight(atPath path: String) throws -> Gallery{
+        /*  galPath = /Users/ben/XCode/projects/Vapor Projects/dynamic.theskinnyonbenny/Public//gal/
+            
+         
+         */
         let (id, name) = try idFromFolderName(atPath: path)
         let galleryPath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + String(id)
+        let imgRootPath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + path + "/"
         let normalImagePath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + path + "/data/normal.jpg"
         let redImagePath = ac.rootUrl + "/" + ac.imageGalPublicSubfolder + "/" + path + "/data/red.jpg"
-        var galDesc: String?
-        var images = [GalleryImage]()
-        if includeDetails {
-            galDesc = try fileContents(atPath: ac.serverPathGal + path + "/gal-desc.txt")
-            images = try galleryDetails(forGallery: path)
-        }
-        return Gallery(id: id, name: name, path: galleryPath, html: galDesc, normalImagePath: normalImagePath, redImagePath: redImagePath, images: images)
+        return Gallery(id: id, name: name, path: galleryPath, filePath: galPath + path, imgRootPath: imgRootPath, html: nil, normalImagePath: normalImagePath, redImagePath: redImagePath, images: [])
     }
     
     private static func idFromFolderName(atPath path: String) throws -> (Int, String) {
@@ -83,7 +86,7 @@ class ImageGalleryPublicFileManager {
     }
     
     private static func galleryDetails (forGallery path: String) throws -> [GalleryImage] {
-        let captionFile = galPath + path + "/pic-desc.txt"
+        let captionFile = path + "/pic-desc.txt"
         guard let captionContents = try? fileContents(atPath: captionFile) else {
             throw Abort (.internalServerError, reason: "Error reading caption file for \(path)")
         }
@@ -101,7 +104,6 @@ class ImageGalleryPublicFileManager {
             let galleryImage = GalleryImage(lineNum: i+1, imagePath: imagePath, thumbnailpath: thumbnailPath, caption: caption)
             images.append(galleryImage)
         }
-        print(images)
         return images
     }
     

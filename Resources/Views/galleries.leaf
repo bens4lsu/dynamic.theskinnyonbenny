@@ -30,14 +30,14 @@
     #for(gallery in galleries):
         #if(gallery.column == "left"):
             <tr><td width="50%" height="113">
-                    <a href="#(gallery.path)" onmouseover="chgImg ('i#(gallery.id)','img#(gallery.id)Red');" onmouseout="chgImg ('i#(gallery.id)','img#(gallery.id)Normal');">
+                    <a href="#(gallery.path)" onmouseover="chgImg ('i#(gallery.id)','img#(gallery.id)Red');" onmouseout="chgImg ('i#(gallery.id)','img#(gallery.id)Normal');" target="_blank">
                         <img border="0" src="#(gallery.normalImagePath)" height="109" name="i#(gallery.id)">
                     </a>
                     <div class="igal-caption">#(gallery.name)</div>
                 </td>
         #elseif(gallery.column == "right"):
                 <td width="50%" height="113">
-                    <a href="#(gallery.path)" onmouseover="chgImg ('i#(gallery.id)','img#(gallery.id)Red');" onmouseout="chgImg ('i#(gallery.id)','img#(gallery.id)Normal');">
+                    <a href="#(gallery.path)" onmouseover="chgImg ('i#(gallery.id)','img#(gallery.id)Red');" onmouseout="chgImg ('i#(gallery.id)','img#(gallery.id)Normal');" target="_blank">
                         <img border="0" src="#(gallery.normalImagePath)" height="109" name="i#(gallery.id)">
                     </a>
                     <div class="igal-caption">#(gallery.name)</div>
