@@ -37,7 +37,7 @@ final class DailyPhotoPublicFileManager {
                 bigIndex = try folderIndexes()
             }
             else if bigIndexLastRefresh.yyyyMMddString < Date().yyyyMMddString {
-                bigIndex[currentYear] = try imageIndexes(forYear: currentYear)
+                try refreshCurrentYear()
             }
             return bigIndex
         }
@@ -112,6 +112,10 @@ final class DailyPhotoPublicFileManager {
     static func imageAfter(_ current: ImageIndex) throws -> ImageIndex? {
         let allAfter = try lazyIndex[current.yyyy]?.filter { $0 > current && $0 <= imageIndexForToday}
         return allAfter?.first
+    }
+    
+    static func refreshCurrentYear() throws {
+        bigIndex[currentYear] = try imageIndexes(forYear: currentYear)
     }
     
     private static func folderIndexes() throws -> [String: [ImageIndex]] {

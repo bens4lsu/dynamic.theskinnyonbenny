@@ -51,6 +51,11 @@ struct DailyPhotoRouteCollection: RouteCollection {
             let link = ac.dpImageUrlStart + imgIndex.imgSrc
             return try await link.encodeResponse(for: req)
         }
+        
+        dp.get("refresh") { req async throws -> Response in
+            try DailyPhotoPublicFileManager.refreshCurrentYear()
+            return req.redirect(to: "/dp")
+        }
 
     }
     
