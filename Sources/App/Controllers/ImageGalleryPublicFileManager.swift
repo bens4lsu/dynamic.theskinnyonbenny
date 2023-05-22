@@ -49,7 +49,6 @@ class ImageGalleryPublicFileManager {
         }
         gallery.images = try galleryDetails(forGallery: gallery.filePath)
         gallery.html = try? fileContents(atPath: "\(gallery.filePath)/gal-desc.txt")
-        print(gallery)
         return gallery
     }
     

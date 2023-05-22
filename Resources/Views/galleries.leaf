@@ -21,6 +21,9 @@
         #endfor
         
     </script>
+    
+    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/embedded.js"></script>
 </head>
 <body>
         

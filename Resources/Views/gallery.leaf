@@ -5,7 +5,8 @@
     <title></title>
     <link rel="stylesheet" href="https://theskinnyonbenny.com/lightview.css" type="text/css" />
 
-    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script language="javascript" type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/embedded.js"></script>
     <script language="javascript" type="text/javascript" src="/js/excanvas.js"></script>
     <script language="javascript" type="text/javascript" src="/js/lightview.js"></script>
     <script language="javascript" type="text/javascript" src="/js/spinners.min.js"></script>
