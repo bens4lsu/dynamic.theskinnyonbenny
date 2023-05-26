@@ -52,6 +52,14 @@ final class DailyPhotoPublicFileManager {
         let dd = formatter.string(from: dt)
         return ImageIndex(yyyy: currentYear, mm: mm, dd: dd)
     }
+    
+    static var currentImagePath: String {
+        get throws {
+            let imgIndex = try lastImageDay(forYear: currentYear)
+            let link = imgIndex.imgSrc
+            return link
+        }
+    }
 
     static func textFileContents (_ fileName: String) -> String {
         let url = dpUrl.appendingPathComponent(fileName)
