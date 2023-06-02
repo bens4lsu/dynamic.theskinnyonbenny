@@ -100,10 +100,12 @@ class ImageGalleryPublicFileManager {
             if split.count > 1 {
                 caption = String(split[1])
             }
-            let imagePath = String(split[0])
-            let thumbnailPath = "_thb_" + String(split[0])
-            let galleryImage = GalleryImage(lineNum: i+1, imagePath: imagePath, thumbnailpath: thumbnailPath, caption: caption)
-            images.append(galleryImage)
+            else if split.count == 1 {      // bug fix 2023-06-02.  don't crash if there's a blank line in pic-desc.
+                let imagePath = String(split[0])
+                let thumbnailPath = "_thb_" + String(split[0])
+                let galleryImage = GalleryImage(lineNum: i+1, imagePath: imagePath, thumbnailpath: thumbnailPath, caption: caption)
+                images.append(galleryImage)
+            }
         }
         return images
     }
