@@ -25,13 +25,21 @@ struct ImageGalleryRouteCollection: RouteCollection {
         }
         
         gal.get(":id") { req -> View in
-            guard let parameter = req.parameters.get("id"),
-                  let id = Int(parameter)
-            else {
-                throw Abort (.badRequest, reason: "Gallery ID in request was not numeric.")
-            }
-            let gallery = try ImageGalleryPublicFileManager.getGallery(id)
-            return try await req.view.render("gallery", gallery)
+            return try await req.view.render("gallery", loadGallery(req))
         }
+        
+        gal.get("data", ":id") { req -> Response in
+            try await loadGallery(req).encodeResponse(for: req)
+        }
+    }
+    
+    private func loadGallery(_ req: Request) async throws -> Gallery {
+        guard let parameter = req.parameters.get("id"),
+              let id = Int(parameter)
+        else {
+            throw Abort (.badRequest, reason: "Gallery ID in request was not numeric.")
+        }
+        let gallery = try ImageGalleryPublicFileManager.getGallery(id)
+        return gallery
     }
 }
