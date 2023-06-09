@@ -5,6 +5,15 @@
     <title></title>
     <link rel="stylesheet" type="text/css" href="/css/dp.css" />
     <script>
+    
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KL8PZZGY28"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-KL8PZZGY28');
+        </script>
         
         function chgImg (imgName, newImg){
             var i = document.getElementsByName(imgName)[0];
