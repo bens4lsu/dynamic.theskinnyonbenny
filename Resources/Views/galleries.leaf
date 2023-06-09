@@ -13,8 +13,8 @@
           gtag('js', new Date());
 
           gtag('config', 'G-KL8PZZGY28');
-        </script>
-        
+    </script>
+    <script>
         function chgImg (imgName, newImg){
             var i = document.getElementsByName(imgName)[0];
             i.src = eval (newImg + ".src");
