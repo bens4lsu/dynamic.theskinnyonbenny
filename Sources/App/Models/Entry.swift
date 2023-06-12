@@ -29,7 +29,7 @@ struct DailyPhotoEntry: Content, Codable {
         else {
             return
         }
-        self.entryText = DailyPhotoPublicFileManager.textFileContents(textFileName)
+        self.entryText = DailyPhotoPublicFileManager.textFileContents(textFileName).replacingOccurrences(of: "\n", with: "<br /><br />")
         let fullPath = ac.dpImageUrlStart + imgPath
         self.entryImgPath = fullPath
         self.isValid = true
