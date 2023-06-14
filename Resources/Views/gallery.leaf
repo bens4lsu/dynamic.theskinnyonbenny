@@ -52,6 +52,5 @@
     #for(image in images):
         <a class="lightview" href="#(imgRootPath)#(image.imagePath)" data-lightview-caption="#(image.caption)" data-lightview-group="group1"><img src="#(imgRootPath)#(image.thumbnailpath)" alt="#(image.imagePath)"></a>
     #endfor
-    
 
 </body>
